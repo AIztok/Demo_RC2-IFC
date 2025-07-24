@@ -43,7 +43,7 @@ def build_rc2_dataframe(model: ifcopenshell.file) -> pd.DataFrame:
 
         cls_list = get_classification_strings(el)
         gross_vol = _get_gross_volume(el)
-        row: Dict = {"guid": el.GlobalId, "Pruefung": True}
+        row: Dict = {"guid": el.GlobalId, "Pruefung": False}
 
         for idx, cls in enumerate(cls_list, start=1):
             row[f"Position_{idx}"] = cls
