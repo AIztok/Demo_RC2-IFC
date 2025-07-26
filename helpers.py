@@ -80,6 +80,7 @@ def extract_ifc_to_dataframe(model, pset_name, split_classifications=False):
         row = {
             "guid": element.GlobalId,
             "class": element.is_a(),
+            "name": getattr(element, "Name", "") or "",
             "classification": "; ".join(cls_list) if not split_classifications else cls_list,
         }
 
@@ -99,9 +100,9 @@ def extract_ifc_to_dataframe(model, pset_name, split_classifications=False):
             values = r.pop("classification")
             for i, val in enumerate(values):
                 r[f"classification_{i+1}"] = val
-        base_cols = ["guid", "class"] + cls_cols
+        base_cols = ["guid", "class", "name"] + cls_cols
     else:
-        base_cols = ["guid", "class", "classification"]
+        base_cols = ["guid", "class", "name", "classification"]
 
     header = base_cols + sorted(quantity_keys) + sorted(pset_keys)
     df = pd.DataFrame(rows)
