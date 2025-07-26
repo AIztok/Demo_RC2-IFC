@@ -43,7 +43,8 @@ def build_rc2_dataframe(model: ifcopenshell.file) -> pd.DataFrame:
 
         cls_list = get_classification_strings(el)
         gross_vol = _get_gross_volume(el)
-        row: Dict = {"guid": el.GlobalId, "Pruefung": False}
+        elem_name  = getattr(el, "Name", "") or ""
+        row: Dict = {"guid": el.GlobalId, "Name": elem_name, "Pruefung": True}
 
         for idx, cls in enumerate(cls_list, start=1):
             row[f"Position_{idx}"] = cls
@@ -52,7 +53,7 @@ def build_rc2_dataframe(model: ifcopenshell.file) -> pd.DataFrame:
         records.append(row)
 
     # make sure every Position_n/Menge_n column exists even if NaN
-    cols = ["guid", "Pruefung"]
+    cols = ["guid", "Name", "Pruefung"]
     for i in range(1, max_n + 1):
         cols += [f"Position_{i}", f"Menge_{i}"]
 
