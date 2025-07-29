@@ -8,8 +8,9 @@ st.set_page_config(page_title="Demo RC2-IFC", layout="wide")
 st.title("🏗️ Demo RC2-IFC")
 
 st.markdown(
-    "Upload IFC Datei. Öffnen, Lesen und CSV schreiben **📥  CSV Export** "
-    "to process it, oder **🛠️ Pset RC2** um den `OEBBset_RC2` "
+    "Upload IFC Datei. Öffnen, Lesen, Quantity-Take-off erstellen und im IFC schreiben, Daten aus IFC auslesen "
+    "und in CSV Format schreiben **📥  CSV Export** "
+    "oder **🛠️ Pset RC2** um den `OEBBset_RC2` "
     "zu erstellen."
 )
 
