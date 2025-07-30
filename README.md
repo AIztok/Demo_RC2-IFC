@@ -13,14 +13,18 @@ Die App ist open-source:
 
 ### Laden der IFC Datei (nirgendwo hochgeladen, bleibt am Rechner)
 
-<img width="1000" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_1.png" />
+<img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_1.png" />
 
 ### Importieren der Klassifizierung
 
-<img width="1000" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_2.png" />
+<img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_2.png" />
 
+Beispiel einer Excel mit der Klassifizierung gem. Standardelementekatalog:
+[Excel mit Regeln](https://github.com/AIztok/Demo_RC2-IFC/blob/main/ifcclassifier/classifications_RC2.xlsx)
 
-<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_3.png" />
+<img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_3.png" />
+
+<img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_3_.png" />
 
 ### Klassifizieren nach Regeln
 
@@ -48,6 +52,10 @@ Metadatenfelder bearbeiten:
 
 Exportieren:
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_9.png" />
+
+Beispiel der Klassifizierung im IFC:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_10.png" />
 
 ## Lesen und Schreiben IFC
 
@@ -88,9 +96,35 @@ Beispiel der gespeicherten Mengen im IFC:
 
 ### CSV Export - Daten lesen
 
+Es werden folgende Daten gelesen:
+Guid, class, name, classifications, quantities and oebbset_semantik_topologie
 
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/6.png" />
+
+De Tabelle wird angezeigt und kann als csv gespeichert werden:
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/7.png" />
 
 ### PSet RC2
+Eine bearbeitbare Tabelle wird erstellt, die Klassifizierung wird zur Demostration mit Volumen gefüllt, kann aber manuell geändert werden
 
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/7.png" />
 
+Tabelle erzeugen:
 
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/8.png" />
+
+Tabelle erzeugt:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/9.png" />
+
+Tabelle kann bearbeitet werden:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/10.png" />
+
+IFC Datei speichern:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/11.png" />
+
+Beispiel der IFC Datei mit dem OEBBset_RC2:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/11.png" />
