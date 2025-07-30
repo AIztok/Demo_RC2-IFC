@@ -21,4 +21,5 @@ Daten bearbieten, hier beispielhaft:
 
 https://demo-rc2-ifc.streamlit.app/
 
+<img width="1546" height="366" alt="image" src="https://github.com/user-attachments/assets/3b5911e3-9637-4551-abf0-02db9147ecd2" />
 
