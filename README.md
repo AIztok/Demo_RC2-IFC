@@ -11,14 +11,43 @@ Die App ist open-source:
 
 
 
-Laden der IFC Datei (nirgendwo hochgeladen, bleibt am Rechner):
-<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_1.png" />
+### Laden der IFC Datei (nirgendwo hochgeladen, bleibt am Rechner)
 
-Importieren der Klassifizierung:
-<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_2.png" />
+<img width="1000" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_1.png" />
+
+### Importieren der Klassifizierung
+
+<img width="1000" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_2.png" />
 
 
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_3.png" />
+
+### Klassifizieren nach Regeln
+
+Die Klassifizierung kann auch über Regeln erfolgen
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_4.png" />
+
+Beispiel einer Excel mit der Regel alle Elemente der IfcClass = IfcRailing als Geländer Klassifizieren:
+[Excel mit Regeln](https://github.com/AIztok/Demo_RC2-IFC/blob/main/ifcclassifier/regeln_RC2.xlsx)
+
+Regel ausführen:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_5.png" />
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_6.png" />
+
+### IFC mit Klassifizierung exportieren
+IFC Export:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_7.png" />
+
+Metadatenfelder bearbeiten:
+
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_8.png" />
+
+Exportieren:
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_9.png" />
 
 ## Lesen und Schreiben IFC
 
@@ -32,9 +61,11 @@ https://demo-rc2-ifc.streamlit.app/
 
 ### IFC Datei in die App laden
 IFC Datei in die App laden:
+
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/1.png" />
 
 Wenn Datei geladen:
+
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/2.png" />
 
 ### Quantity take-off
@@ -48,9 +79,11 @@ und schreiben der Ergebnisse in den PSet Qto_"IfcClass"BaseQuantities der Ifc Da
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/3.png" />
 
 Nach Berechnung der Werte kann die adaptierte IFC gespeichert werden:
+
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/4.png" />
 
 Beispiel der gespeicherten Mengen im IFC:
+
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/5.png" />
 
 ### CSV Export - Daten lesen
