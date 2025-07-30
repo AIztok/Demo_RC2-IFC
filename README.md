@@ -48,7 +48,7 @@ IFC Export:
 
 Metadatenfelder bearbeiten:
 
-<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_8.png" />
+<img width="1000" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_8.png" />
 
 Exportieren:
 <img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_9.png" />
@@ -127,4 +127,4 @@ IFC Datei speichern:
 
 Beispiel der IFC Datei mit dem OEBBset_RC2:
 
-<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/11.png" />
+<img width="1546" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/12.png" />
