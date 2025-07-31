@@ -20,7 +20,7 @@ Die App ist open-source:
 <img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_2.png" />
 
 Beispiel einer Excel mit der Klassifizierung gem. Standardelementekatalog:
-[Excel mit Regeln](https://github.com/AIztok/Demo_RC2-IFC/blob/main/ifcclassifier/classifications_RC2.xlsx)
+[Excel mit Klassifizierung](https://github.com/AIztok/Demo_RC2-IFC/blob/main/ifcclassifier/classifications_RC2.xlsx)
 
 <img width="500" height="366" alt="image" src="https://github.com/AIztok/Demo_RC2-IFC/blob/main/Figures/c_3.png" />
 
