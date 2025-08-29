@@ -2,6 +2,5 @@ streamlit
 pathlib
 pandas
 numpy
-process
 fuzz
 ifcopenshell
