@@ -2,5 +2,7 @@ streamlit
 pathlib
 pandas
 numpy
-fuzz
+rapidfuzz
+openpyxl
+xlsxwriter
 ifcopenshell
