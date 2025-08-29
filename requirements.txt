@@ -2,7 +2,6 @@ streamlit
 pathlib
 pandas
 rapidfuzz
-numpy
-io
-tempfile
+process
+fuzz
 ifcopenshell
