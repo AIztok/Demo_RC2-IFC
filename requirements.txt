@@ -1,4 +1,8 @@
 streamlit
 pathlib
 pandas
+rapidfuzz
+numpy
+io
+tempfile
 ifcopenshell
