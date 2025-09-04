@@ -37,8 +37,6 @@ def tri_area(v0, v1, v2):
     return 0.5 * np.linalg.norm(np.cross(v1 - v0, v2 - v0))
 
 def mesh_area_and_volume(verts, faces) -> Tuple[float, float]:
-    if verts.size == 0 or faces.size == 0:
-        return 0.0, 0.0
     area = vol = 0.0
     for a, b, c in faces:
         v0, v1, v2 = verts[a], verts[b], verts[c]
@@ -46,52 +44,23 @@ def mesh_area_and_volume(verts, faces) -> Tuple[float, float]:
         vol += np.dot(v0, np.cross(v1, v2)) / 6.0
     return area, abs(vol)
 
-def bbox_longest_edge(v):
-    if v.size == 0:
-        return 0.0
-    extents = v.max(axis=0) - v.min(axis=0)
-    return float(extents.max())
-
-def bbox_height(v):
-    if v.size == 0:
-        return 0.0
-    z = v[:, 2]
-    return float(z.max() - z.min())
-
-def bbox_diag_xy(v):
-    if v.size == 0:
-        return 0.0
-    xy = v[:, :2]
-    extents_xy = xy.max(axis=0) - xy.min(axis=0)
-    return float(np.linalg.norm(extents_xy))
+def bbox_longest_edge(v):  return float((v.max(0) - v.min(0)).max())
+def bbox_height(v):        return float(v[:, 2].ptp())
+def bbox_diag_xy(v):       return float(np.linalg.norm(v[:, :2].ptp(0)))
 
 def area_bottom(v, f):
-    if v.size == 0 or f.size == 0:
-        return 0.0
     down = np.array([0, 0, -1.0]); a = 0.0
     for i, j, k in f:
-        n = np.cross(v[j]-v[i], v[k]-v[i])
-        nn = np.linalg.norm(n)
-        if nn == 0:
-            continue
-        n /= nn
-        if np.dot(n, down) > .8:
-            a += tri_area(v[i], v[j], v[k])
+        n = np.cross(v[j]-v[i], v[k]-v[i]); n /= np.linalg.norm(n) + 1e-12
+        if np.dot(n, down) > .8: a += tri_area(v[i], v[j], v[k])
     return a
 
 def area_side_max(v, f):
-    if v.size == 0 or f.size == 0:
-        return 0.0
-    up = np.array([0, 0, 1.0]); max_a = 0.0
-    for i, j, k in f:
-        n = np.cross(v[j]-v[i], v[k]-v[i])
-        nn = np.linalg.norm(n)
-        if nn == 0:
-            continue
-        n /= nn
-        if abs(np.dot(n, up)) < .2:
-            max_a = max(max_a, tri_area(v[i], v[j], v[k]))
-    return max_a
+    up = np.array([0, 0, 1.0]); areas=[]
+    for i,j,k in f:
+        n = np.cross(v[j]-v[i], v[k]-v[i]); n/=np.linalg.norm(n)+1e-12
+        if abs(np.dot(n, up))<.2: areas.append(tri_area(v[i],v[j],v[k]))
+    return max(areas, default=0.0)
 
 def compute_quantity(key, v, f):
     area, vol = mesh_area_and_volume(v, f)
@@ -104,7 +73,7 @@ def compute_quantity(key, v, f):
         "LENGTH_LONGEST": bbox_longest_edge(v),
         "LENGTH_XY": bbox_diag_xy(v),
         "HEIGHT_Z": bbox_height(v),
-    }.get(key, None)
+    }.get(key)
 
 # ───────────────────────── IFC helpers ─────────────────────────
 def get_project_unit(model, unit_type):
@@ -316,20 +285,11 @@ if st.button("⚙️ Mengen nach Mapping generieren"):
 
         # geometry
         try:
-#            sh = ifcopenshell.geom.create_shape(settings, el)
-#        except Exception:
-#            continue
-#        v = np.asarray(sh.geometry.verts, float).reshape(-1, 3)
-#        f = np.asarray(sh.geometry.faces, int).reshape(-1, 3)
             sh = ifcopenshell.geom.create_shape(settings, el)
-            verts = getattr(sh.geometry, "verts", [])
-            faces = getattr(sh.geometry, "faces", [])
-            v = np.array(verts, dtype=float).reshape((-1, 3)) if len(verts) else np.empty((0, 3), dtype=float)
-            f = np.array(faces, dtype=int).reshape((-1, 3)) if len(faces) else np.empty((0, 3), dtype=int)
         except Exception:
-          # no mesh for this element → fall back to zeros for computed quantities
-          v = np.empty((0, 3), dtype=float)
-          f = np.empty((0, 3), dtype=int)
+            continue
+        v = np.asarray(sh.geometry.verts, float).reshape(-1, 3)
+        f = np.asarray(sh.geometry.faces, int).reshape(-1, 3)
 
         # target pset
         pset = upsert_pset(model, el, "OEBBset_RC2_KE")
@@ -451,5 +411,3 @@ if st.button("⚙️ Mengen nach Mapping generieren"):
         )
 else:
     st.info("Mapping laden und auf **Mengen nach Mapping generieren** klicken.")
-
-
